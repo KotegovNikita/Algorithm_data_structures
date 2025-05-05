@@ -33,9 +33,11 @@ TEST(Ascii85, ZeroZ)
 
 TEST(Ascii85, BadInput)
 {
-    std::istringstream in("!!!!"); std::ostringstream out;
-    EXPECT_EQ(decode(in, out), 1);
+    std::istringstream in("!");           
+    std::ostringstream out;
+    EXPECT_EQ(decode(in, out), 1);        
 }
+
 
 /* ----------- случайные данные ----------- */
 TEST(Ascii85, RandomRoundTrip)
