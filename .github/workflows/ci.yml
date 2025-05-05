@@ -22,17 +22,11 @@ jobs:
           ls -R
 
       - name: Build CLI
-        run: g++ -std=c++17 -O2 -Wall -Wextra \
-             Assignment_1/ascii85.cpp \
-             Assignment_1/ascii85_cli.cpp \
-             -o ascii85
+        run: g++ -std=c++17 -O2 -Wall -Wextra Assignment_1/ascii85.cpp Assignment_1/ascii85_cli.cpp -o ascii85
 
       # tests
       - name: Build tests
-        run: g++ -std=c++17 -O2 -Wall -Wextra \
-             Assignment_1/ascii85.cpp \
-             Assignment_1/ascii85_test.cpp \
-             -lgtest -lpthread -o ascii85_test
+        run: g++ -std=c++17 -O2 -Wall -Wextra Assignment_1/ascii85.cpp Assignment_1/ascii85_test.cpp -lgtest -lpthread -o ascii85_test
 
       - name: Run tests
         run: ./ascii85_test
