@@ -16,10 +16,6 @@ jobs:
           sudo make
           sudo cp lib/*.a /usr/lib
 
-      - name: Debug – tree
-        run: |
-          echo "PWD = $(pwd)"
-          ls -R
 
       - name: Build CLI
         run: g++ -std=c++17 -O2 -Wall -Wextra Assignment_1/ascii85.cpp Assignment_1/ascii85_cli.cpp -o ascii85
